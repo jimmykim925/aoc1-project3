@@ -10,16 +10,18 @@
 
 @interface ViewController : UIViewController
 {
+  NSNumber *sumOfNumbers;
+  NSString *convertedToString;
   NSMutableString *appendedMutableString;
   NSString *returnStringValue;
-  NSString *alertMutableString;
+  NSString *displayAlertWithString;
   UIAlertView *alertResult;
 }
 
 - (int)add:(NSInteger)addNum1 addNum2:(NSInteger)addNum2 sum:(NSInteger)sum;
 - (BOOL)compare:(NSInteger)boolNum1 boolNum2:(NSInteger)boolNum2;
 - (NSString*) append:(NSString*)string1 string2:(NSString *)string2;
-- (NSString*) displayAlertWithString:(NSString *)displayString;
+- (NSString*) displayAlert:(NSString *)displayMessage displayText:(NSString *)displayText;
 
 
 @end

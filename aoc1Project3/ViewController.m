@@ -16,26 +16,46 @@
 
 - (void)viewDidLoad
 {
+  // Calls Add function w/ two parameters
   int returnAddValue = [self add:22 addNum2:7 sum:0];
+  
+  // Converts int to NSNumber
+  sumOfNumbers = [[NSNumber alloc] init];
+  sumOfNumbers = [NSNumber numberWithInt:returnAddValue];
+  
+  // Converts NSNumber to NSString
+  convertedToString = [[NSString alloc] init];
+  convertedToString = [sumOfNumbers stringValue];
+  
+  // Calls Alert function, with two parameters
+  [self displayAlert:convertedToString displayText:@"The Number is"];
+  
   
   int returnCompareValue = [self compare:21 boolNum2:21];
   
+  // Calls Append function to append two string values
+  returnStringValue = [[NSString alloc] init];
   returnStringValue = [self append:@"hi" string2:@"there"];
   
-  alertMutableString = [self displayAlertWithString:returnStringValue];
-  
-  
+  // Calls Alert function, with two parameters
+  [self displayAlert:returnStringValue displayText:@"Appended String is"];
   
   [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
 }
 
 // ADD Function, takes two NSInteger and returns the result of an addition of them
 - (int)add:(NSInteger)addNum1 addNum2:(NSInteger)addNum2 sum:(NSInteger)sum
 {
   sum = addNum1 + addNum2;
-  NSLog(@"1st integer: %d, 2nd integer: %d, Sum: %d", addNum1, addNum2, sum);
-  
+
   return sum;
 }
 
@@ -64,9 +84,9 @@
 }
 
 // DisplayAlertWithString takes a parameter NSString, alerts using string
-- (NSString *) displayAlertWithString:(NSString *)displayString
+- (NSString *) displayAlert:(NSString *)displayMessage displayText:(NSString *)displayText
 {
-  alertResult = [[UIAlertView alloc] initWithTitle: @"Appended String" message: displayString delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+  alertResult = [[UIAlertView alloc] initWithTitle: displayText message: displayMessage delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
  
   if(alertResult !=nil){
     [alertResult show];
@@ -76,11 +96,6 @@
 }
 
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
