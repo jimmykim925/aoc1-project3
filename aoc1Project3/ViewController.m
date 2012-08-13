@@ -30,15 +30,38 @@
   // Calls Alert function, with two parameters
   [self displayAlert:convertedToString displayText:@"The Number is"];
   
-  
-  int returnCompareValue = [self compare:21 boolNum2:21];
-  
   // Calls Append function to append two string values
   returnStringValue = [[NSString alloc] init];
   returnStringValue = [self append:@"hi" string2:@"there"];
   
   // Calls Alert function, with two parameters
   [self displayAlert:returnStringValue displayText:@"Appended String is"];
+  
+  //Calls Compare function, with two int values, displays alert if YES
+  int compareValue1 = 10;
+  int compareValue2 = 11;
+  int returnCompareValue = [self compare:compareValue1 boolNum2:compareValue2];
+  
+  convertBooltoNSNumber = [[NSNumber alloc] init];
+  convertBooltoNSNumber = [NSNumber numberWithInt:compareValue1];
+  
+  convertBooltoString = [[NSString alloc] init];
+  convertBooltoString = [convertBooltoNSNumber stringValue];
+  
+  convertBooltoNSNumber2 = [[NSNumber alloc] init];
+  convertBooltoNSNumber2 = [NSNumber numberWithInt:compareValue2];
+  
+  convertBooltoString2 = [[NSString alloc] init];
+  convertBooltoString2 = [convertBooltoNSNumber2 stringValue];
+  
+  test = [[NSString alloc] initWithFormat:@"Input Values: %@, %@", convertBooltoString, convertBooltoString2];
+  
+  if (returnCompareValue == 1){
+    [self displayAlert:test displayText:@"Returned BOOL value is 1 or YES"];
+  } else {
+    [self displayAlert:test displayText:@"Returned BOOL value is 0 or NO"];
+   
+  }
   
   [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

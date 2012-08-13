@@ -16,6 +16,11 @@
   NSString *returnStringValue;
   NSString *displayAlertWithString;
   UIAlertView *alertResult;
+  NSNumber *convertBooltoNSNumber;
+  NSString *convertBooltoString;
+  NSNumber *convertBooltoNSNumber2;
+  NSString *convertBooltoString2;
+  NSString *test;
 }
 
 - (int)add:(NSInteger)addNum1 addNum2:(NSInteger)addNum2 sum:(NSInteger)sum;
