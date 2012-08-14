@@ -42,15 +42,19 @@
   int compareValue2 = 11;
   int returnCompareValue = [self compare:compareValue1 boolNum2:compareValue2];
   
+  // Converts 1st compare value to NSNumber
   convertBooltoNSNumber = [[NSNumber alloc] init];
   convertBooltoNSNumber = [NSNumber numberWithInt:compareValue1];
   
+  // Converts 1st compare value to NSString
   convertBooltoString = [[NSString alloc] init];
   convertBooltoString = [convertBooltoNSNumber stringValue];
   
+  // Converts 2nd compare value to NSNumber
   convertBooltoNSNumber2 = [[NSNumber alloc] init];
   convertBooltoNSNumber2 = [NSNumber numberWithInt:compareValue2];
   
+  // Converts 2nd compare value to NSString
   convertBooltoString2 = [[NSString alloc] init];
   convertBooltoString2 = [convertBooltoNSNumber2 stringValue];
   
